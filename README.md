@@ -1,9 +1,4 @@
-# wysantos/glpi
-
 # Docker Container GLPI
-Criando a imagem online
-
-cd src docker build -t wysantos/glpi .
 
 # Utilização
 
