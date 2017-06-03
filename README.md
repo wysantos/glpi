@@ -3,13 +3,15 @@ Docker Container GLPI
 
 
 # Criando a imagem online
+´´´
 cd src
 docker build -t wysantos/glpi .
-
+´´´
 
 # Utilização
 
 # Iniciando o Container do DataBase:
+´´´
 docker run -d -t \
 -v $(pwd)/mysql:/var/lib/mysql \
 -e MYSQL_ROOT_PASSWORD=rootpass \
@@ -19,9 +21,10 @@ docker run -d -t \
 -e SET_CONTAINER_TIMEZONE=true \
 -e CONTAINER_TIMEZONE=America/Sao_Paulo \
 --name glpi-db mariadb
-
+´´´
 
 # Iniciando o Container da Aplicação:
+´´´
 docker run -d -t \
 -p "80:80" -p "443:443" \
 --link glpi-db:glpi.db \
@@ -29,4 +32,4 @@ docker run -d -t \
 -e SET_CONTAINER_TIMEZONE=true \
 -e CONTAINER_TIMEZONE=America/Sao_Paulo \
 --name glpi-app glpi
-
+´´´
