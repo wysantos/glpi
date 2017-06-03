@@ -1,2 +1,4 @@
 .git
+.gitignore
+.dockerignore
 public_html/glpi/.htaccess
